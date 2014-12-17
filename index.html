@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>SkuChain SF BitCoin Devs</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -43,82 +43,77 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Charts</h1>
-					<h3>Using Haskell instead of R and Pyplot</h3>
+					<h1>Blockchain University</h1>
+					<h3>Consenus: Proof of work and the upstarts</h3>
 				</section>
-				
 				<section>
-				  <h1>Strengths of Charts</h1>
+				  <h3>What makes Bitcoin special and why are so many smart people working on alternatives?</h3>
+				  <p>Tendermint | Pebble | NXT | Ethereum et al...</p>
+				</section>
+				<section>
+				  <h2>What is the consensus?</h2>
 				  <ul>
-				    <li>Monadic or Pure functional layout and chart contruction</li>
-				    <li>Operate a high degree of abstractions</li>
-				    <li>Great Examples</li>
+				    <li>A secure global ledger</li>
+				    <li>Anonymously ordered</li>
+				    <li>Independently verified by every full node</li>
 				  </ul>
 				</section>
-
 				<section>
-				  <h1>Weakness of Charts</h1>
+				  <h2>A Secure? global ledger</h2>
+				  <h4>Crypto....</h4>
 				  <ul>
-				    <li>Non-interactive charting</li>
-				    <li>Asethics are fairly utiliarian</li>
-				    <li>iHaskell support?</li>
+				    <li>Sane but not finely tuned choices of cryptographic primitives</li>
+				  </ul>
+				  <p></p>
+				  <h4> Selfishness</h4>
+				  <ul>
+				    <li>A finely tuned set of incetives secure the network</li>
+				    <li>Value At Risk becomes a new parameter in cryptananalysis </li>
 				  </ul>
 				</section>
-				
 				<section>
-				  <h1>Where do I start?</h1>
-				  <ul>
-				    <li><a href="https://github.com/timbod7/haskell-chart/wiki">Github Wiki Examples</a></li>
-				  </ul>
-				  <img src="novelplot.png">
+  				  <h2>Proof of Work is special</h2>
+				  <img src="Bitcoin.jpg" />
 				</section>
-				
-				<section>
-				  <h2>Backends are seperated from layout </h2>
-				  <h4>Cairo for PNG. gtk2hs tools need to be your path to build.</h4>
-				  <h4>Diagrams for SVG</h4>
-				</section>
-				
-				
-				<section>
-					<h2>Types</h2>
-					<pre><code data-trim contenteditable>
-dp :: [Double]
-dp = [24,21,32.3,24,15,34,43,55,57,72,74,75,73,72,55,44]
-
-sl :: Sparkline
-sl = SparkLine barSpark dp
- 
-fopt :: FileOptions
-fopts = FileOptions (sparkSize sl) PNG
- 
-main = do
-  renderableToFile fopts (sparkLineToRenderable sl) "bar_spark.png"
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Types</h2>
-					<h3>Data.Vector to Renderable ~= R </h3>
-					<h4>Helper Functions: Annoying type munging</h4>
-					<pre><code data-trim contenteditable>
-scatterDataToPointData :: ((V.Vector Double, V.Vector Double, String), Colour a) -> PlotPoints Double Double
-scatterDataToPointData ((x_vals,y_vals,title),color) = points (zip (V.toList x_vals) (V.toList y_vals)) title color
-
-zipForHistData :: Double -> [Double]
-zipForHistData first = [first]
-
-tupleToPlotVals :: (V.Vector Double) -> [[Double]]
-tupleToPlotVals histo = V.toList $ V.map zipForHistData histo
-
-					</code></pre>
-				</section>
-				
-				<section>
-					<h2>Totally worth it!</h2>
-					<h2>Applicative data analysis piplines and Math.Statistics</h2>
-				</section>
-
+  				<section>
+  				  <h2>Proof of Work is special</h2>
+  				  <ul>
+  				    <li>Randomizes selection of the next block</li>
+  				    <li>Thermodynamically commits to a certain history</li>
+  				    <li>Attacks on the system risk both real resources and probablistic opportunites</li>
+  				  </ul>
+  				</section>
+  				<section>
+  				<h2>Proof of Work is fragile</h2>
+  				<img src="RubeGoldberg.gif" />
+  				</section>
+  				<section>
+  				  <h2>Proof of Work is fragile</h2>
+  				  <ul>
+  				    <li>Incentives can collapse: See Dogecoin</li>
+  				    <li>New use cases can change the risk reward model.
+  				    Tokenization and metaprotocols can increase the frequency of attacks on the ledger</li>
+  				    <li>Adds value at risk to the blockchain security model</li>
+  				  </ul>
+  				</section>
+  				<section>
+  				<h2>Proof of Work is scarce</h2>
+  				<img src="Scarce.jpg" />
+  				</section>
+  				<section>
+  				  <h2>Proof of Work is scarce</h2>
+  				  <ul>
+  				    <li>Proof of Work implies a (small) finite number of blockchain structures</li>
+  				    <li>A few opportunties to get the long term incentives right</li>
+  				    <li>Proof of work is tightly coupled to currency applications</li>
+  				  </ul>
+  				</section>
+  				<section>
+  				  <h2>New consensus models</h2>
+  				  <ul>
+  				    <li>Change any one thing -> Significantly different security model</li>
+  				  </ul>
+  				</section>
 			</div>
 
 		</div>
@@ -137,7 +132,7 @@ tupleToPlotVals histo = V.toList $ V.map zipForHistData histo
 				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
